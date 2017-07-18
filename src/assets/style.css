@@ -11,14 +11,14 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background-color: #5cb85c;
+    background-color: #4ecf5b;
     box-sizing: border-box;
     color: #fff;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    font-size: 14px;
-    height: 40px;
+    font-size: 22px;
+    height: 50px;
     line-height: 1;
     padding: 0 10px;
     position: relative;
@@ -126,12 +126,12 @@
 }
 .mint-button--primary {
     color: #fff;
-    background-color: #5cb85c
+    background-color: #4ecf5b
 }
 .mint-button--primary.is-plain {
-    border: 1px solid #5cb85c;
+    border: 1px solid #4ecf5b;
     background-color: transparent;
-    color: #5cb85c
+    color: #39BC30
 }
 .mint-button--danger {
     color: #fff;
@@ -375,7 +375,7 @@
     margin-left: 0;
 }
 .mint-field-state.is-success {
-    color: #4caf50;
+    color: #39BC30;
 }
 .mint-field-state.is-warning {
     color: #ffc107;

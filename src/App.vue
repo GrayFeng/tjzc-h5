@@ -1,7 +1,7 @@
 <template>
   <div>
-    <mt-header title="仅图标">
-      <router-link to="/" slot="left">
+    <mt-header :title="title">
+      <router-link to="/" slot="left" v-if="visible">
         <mt-button icon="back"></mt-button>
       </router-link>
       <mt-button slot="right" icon="more"></mt-button>
@@ -14,11 +14,25 @@
   html, body {
     margin: 0;
     padding: 0;
+    ont-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  div,p{
+    margin: 0;
+    padding: 0;
   }
 </style>
 
 <script type="text/babel">
   export default {
-
-  }
+    data() {
+      return {
+        title: '大行道'
+      }
+    },
+    computed: {
+      visible () {
+        return ['/'].indexOf(this.$route.path) < 0;
+      }
+    }
+  };
 </script>

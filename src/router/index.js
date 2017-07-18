@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import mintui from '@/pages/mint-ui'
+import index from '@/pages/index'
 
 Vue.use(Router)
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'mint-ui',
-      component: mintui
+      name: 'index',
+      component: index
     }
   ]
 })
