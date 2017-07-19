@@ -9,10 +9,12 @@
     </mt-swipe>
     <nav>
         <ul class="nav-ul">
-          <li class="nav-li">
-            <i class="icon-zc"></i>
-            <p>租车服务</p>
-          </li>
+          <router-link to="/order">
+            <li class="nav-li">
+              <i class="icon-zc"></i>
+              <p>租车服务</p>
+            </li>
+          </router-link>
           <li class="nav-li  border-left-ccc">
             <i class="icon-ly"></i>
             <p>旅游服务</p>
@@ -40,6 +42,7 @@
 <style>
     .page-index .mint-swipe {
       height: 200px;
+      width: 100%;
       color: #fff;
       font-size: 30px;
       text-align: center;
@@ -81,7 +84,7 @@
       height: 100px;
       width: 49.5%;
       float: left;
-      border-bottom: 1px #ccc solid;
+      border-bottom: 1px #efefef solid;
     }
 
     .page-index .nav-li i{
@@ -125,7 +128,7 @@
     }
 
     .border-left-ccc{
-      border-left: 1px #ccc solid;
+      border-left: 1px #efefef solid;
     }
 
 
@@ -135,7 +138,7 @@ export default {
   name: 'index',
   data () {
     return {
-      title: 'index'
+      title: '大行道'
     };
   }
 }

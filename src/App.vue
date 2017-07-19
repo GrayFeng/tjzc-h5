@@ -4,7 +4,7 @@
       <router-link to="/" slot="left" v-if="visible">
         <mt-button icon="back"></mt-button>
       </router-link>
-      <mt-button slot="right" icon="more"></mt-button>
+      <mt-button slot="right" icon="more" v-if="visible"></mt-button>
     </mt-header>
     <router-view></router-view>
   </div>
