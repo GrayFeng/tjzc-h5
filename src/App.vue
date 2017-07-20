@@ -4,7 +4,11 @@
       <router-link to="/" slot="left" v-if="visible">
         <mt-button icon="back"></mt-button>
       </router-link>
-      <mt-button slot="right" icon="more" v-if="visible"></mt-button>
+      <router-link to="/login" slot="right" v-if="memberCenterVisble" >
+        <mt-button>
+          <img src="./assets/memerCenter.png" height="24" width="24" slot="icon">
+        </mt-button>
+      </router-link>
     </mt-header>
     <router-view></router-view>
   </div>
@@ -32,6 +36,10 @@
     computed: {
       visible () {
         return ['/'].indexOf(this.$route.path) < 0;
+      },
+
+      memberCenterVisble () {
+        return ['/member','/login'].indexOf(this.$route.path) < 0;
       }
     }
   };

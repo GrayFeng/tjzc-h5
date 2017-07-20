@@ -15,10 +15,12 @@
               <p>租车服务</p>
             </li>
           </router-link>
-          <li class="nav-li  border-left-ccc">
-            <i class="icon-ly"></i>
-            <p>旅游服务</p>
-          </li>
+          <router-link to="/tours">
+            <li class="nav-li  border-left-ccc">
+              <i class="icon-ly"></i>
+              <p>旅游服务</p>
+            </li>
+          </router-link>
           <li class="nav-li">
             <i class="icon-qz"></i>
             <p>签证服务</p>
