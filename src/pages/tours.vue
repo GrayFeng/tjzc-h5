@@ -31,8 +31,11 @@
   .page-toursr .mint-tab-item-label{
     font-size: 18px;
   }
+  .page-toursr .mint-tab-container-wrap{
+    margin-top: 5px;
+  }
   .page-toursr .tours-box{
-    padding: 10px;
+    padding: 0px 10px 5px 10px;
   }
   .page-toursr .tours-item{
     float: left;

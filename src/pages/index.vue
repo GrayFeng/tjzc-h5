@@ -97,27 +97,27 @@
     }
 
     .page-index .nav-li .icon-zc{
-      background: url(../assets/index/nav-zc.png) no-repeat;
+      background: url(../assets/index/nav-zc02.png) no-repeat;
     }
 
     .page-index .nav-li .icon-ly{
-      background: url(../assets/index/nav-ly.png) no-repeat;
+      background: url(../assets/index/nav-ly01.png) no-repeat;
     }
 
     .page-index .nav-li .icon-qz{
-      background: url(../assets/index/nav-qz.png) no-repeat;
+      background: url(../assets/index/nav-qz01.png) no-repeat;
     }
 
     .page-index .nav-li .icon-fc{
-      background: url(../assets/index/nav-fc.png) no-repeat;
+      background: url(../assets/index/nav-fc02.png) no-repeat;
     }
 
     .page-index .nav-li .icon-qy{
-      background: url(../assets/index/nav-qy.png) no-repeat;
+      background: url(../assets/index/nav-qy01.png) no-repeat;
     }
 
     .page-index .nav-li .icon-us{
-      background: url(../assets/index/nav-us.png) no-repeat;
+      background: url(../assets/index/nav-us01.png) no-repeat;
     }
 
     .page-index .nav-li p{

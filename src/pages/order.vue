@@ -78,7 +78,7 @@
     padding: 5px;
     font-size: 18px;
     line-height: 30px;
-    color: #4ecf5b;
+    color: #33cc00;
   }
 </style>
 <script type="text/babel">
