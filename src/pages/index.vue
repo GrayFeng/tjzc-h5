@@ -56,6 +56,7 @@
     }
 
     .page-index .mint-swipe-item img{
+      width: 100%;
       height: 200px;
     }
 
