@@ -10,30 +10,44 @@
     <nav>
         <ul class="nav-ul">
           <router-link to="/order">
-            <li class="nav-li">
+            <li class="nav-li bg-pink">
               <i class="icon-zc"></i>
               <p>租车服务</p>
             </li>
           </router-link>
           <router-link to="/tours">
-            <li class="nav-li  border-left-ccc">
+            <li class="nav-li bg-pink border-left-ccc">
               <i class="icon-ly"></i>
               <p>旅游服务</p>
             </li>
           </router-link>
-          <li class="nav-li">
-            <i class="icon-qz"></i>
-            <p>签证服务</p>
-          </li>
-          <li class="nav-li border-left-ccc">
+          <router-link to="/tours">
+            <li class="nav-li bg-pink border-left-ccc">
+              <i class="icon-qz"></i>
+              <p>签证服务</p>
+            </li>
+          </router-link>
+          <li class="nav-li bg-blue">
             <i class="icon-fc"></i>
             <p>房车服务</p>
           </li>
-          <li class="nav-li">
+          <li class="nav-li bg-blue border-left-ccc">
             <i class="icon-qy"></i>
             <p>企业服务</p>
           </li>
-          <li class="nav-li border-left-ccc">
+          <li class="nav-li bg-blue border-left-ccc">
+            <i class="icon-us"></i>
+            <p>关于我们</p>
+          </li>
+          <li class="nav-li bg-yellow">
+            <i class="icon-fc"></i>
+            <p>房车服务</p>
+          </li>
+          <li class="nav-li bg-yellow border-left-ccc">
+            <i class="icon-qy"></i>
+            <p>企业服务</p>
+          </li>
+          <li class="nav-li bg-yellow border-left-ccc">
             <i class="icon-us"></i>
             <p>关于我们</p>
           </li>
@@ -43,7 +57,7 @@
 </template>
 <style>
     .page-index .mint-swipe {
-      height: 200px;
+      height: 180px;
       width: 100%;
       color: #fff;
       font-size: 30px;
@@ -78,47 +92,53 @@
     .page-index .nav-ul{
       list-style-type: none;
       position: relative;
-      margin: 0;
-      padding: 0;
+      margin: 5px;
+      padding: 0 0 0 2px;
       border: 0;
     }
 
     .page-index .nav-li{
       height: 100px;
-      width: 49.5%;
+      width: 33.1%;
       float: left;
-      border-bottom: 1px #efefef solid;
+      border-bottom: 2px #fff solid;
     }
 
     .page-index .nav-li i{
       display: block;
-      margin: 8px auto 8px auto;
-      width: 48px;
-      height: 48px;
+      margin: 16px auto 8px auto;
+      width: 36px;
+      height: 36px;
     }
 
     .page-index .nav-li .icon-zc{
-      background: url(../assets/index/nav-zc02.png) no-repeat;
+      background: url(../assets/index/nav-zc03.png) no-repeat;
+      background-size: 36px 36px;
     }
 
     .page-index .nav-li .icon-ly{
-      background: url(../assets/index/nav-ly01.png) no-repeat;
+      background: url(../assets/index/nav-ly02.png) no-repeat;
+      background-size: 36px 36px;
     }
 
     .page-index .nav-li .icon-qz{
-      background: url(../assets/index/nav-qz01.png) no-repeat;
+      background: url(../assets/index/nav-qz02.png) no-repeat;
+      background-size: 36px 36px;
     }
 
     .page-index .nav-li .icon-fc{
-      background: url(../assets/index/nav-fc02.png) no-repeat;
+      background: url(../assets/index/nav-zc03.png) no-repeat;
+      background-size: 36px 36px;
     }
 
     .page-index .nav-li .icon-qy{
-      background: url(../assets/index/nav-qy01.png) no-repeat;
+      background: url(../assets/index/nav-ly02.png) no-repeat;
+      background-size: 36px 36px;
     }
 
     .page-index .nav-li .icon-us{
-      background: url(../assets/index/nav-us01.png) no-repeat;
+      background: url(../assets/index/nav-qz02.png) no-repeat;
+      background-size: 36px 36px;
     }
 
     .page-index .nav-li p{
@@ -126,12 +146,25 @@
       margin: 0;
       padding: 0;
       font-size: 18px;
-      color: #333;
+      color: #fff;
+      text-shadow: 0 2px 1px rgba(0,0,0,.2)
 
     }
 
+    .bg-yellow{
+      background-color: #fc9720;
+    }
+
+    .bg-pink{
+      background-color: #f55;
+    }
+
+    .bg-blue{
+      background-color: #25a4bb;
+    }
+
     .border-left-ccc{
-      border-left: 1px #efefef solid;
+      border-left: 1px #fff solid;
     }
 
 

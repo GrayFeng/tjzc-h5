@@ -43,7 +43,7 @@
   }
   .page-toursr .tours-box li:nth-of-type(odd){
     list-style: none;
-    margin-right: 2px;
+    margin-right: 1px;
   }
   .page-toursr .tours-box li:nth-of-type(even){
     list-style: none;
