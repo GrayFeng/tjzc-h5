@@ -95,7 +95,7 @@
     }
 
     .page-index .nav-li1{
-      height: 88px;
+      height: 88.5px;
       width: 39.7%;
       float: left;
       border-bottom: 2px #fff solid;
