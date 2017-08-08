@@ -22,7 +22,7 @@
           <mt-cell :title="vehicleData.title" is-link @click.native="vehicleData.pickerVisible=!vehicleData.pickerVisible">
             <img slot="icon" src="../assets/order/car-icon.png" width="24" height="24">
           </mt-cell>
-          <mt-cell title="请选择包车天数" is-lin @click.native="zqModelPickerVisible=!zqModelPickerVisible">
+          <mt-cell :title="tenancyData.title" is-link @click.native="tenancyData.zqModelPickerVisible=!tenancyData.zqModelPickerVisible">
             <img slot="icon" src="../assets/order/day-icon.png" width="24" height="24">
           </mt-cell>
         </mt-tab-container-item>
@@ -41,12 +41,12 @@
           </mt-cell>
           <mt-cell class="cell-input">
             <img slot="icon" src="../assets/order/address-icon-1.png" width="24" height="24">
-            <input type="text" placeholder="请输入航班号">
+            <input v-model="flight" type="text" placeholder="请输入航班号">
           </mt-cell>
-          <mt-cell title="接机／送机" is-link>
+          <mt-cell :title="fetchSendData.title" is-link @click.native="fetchSendData.visible=!fetchSendData.visible">
             <img slot="icon" src="../assets/order/address-icon-1.png" width="24" height="24">
           </mt-cell>
-          <mt-cell title="单程／往返" is-link>
+          <mt-cell :title="singleData.title" is-link @click.native="singleData.visible=!singleData.visible">
             <img slot="icon" src="../assets/order/address-icon-1.png" width="24" height="24">
           </mt-cell>
         </mt-tab-container-item>
@@ -65,12 +65,12 @@
           </mt-cell>
           <mt-cell class="cell-input">
             <img slot="icon" src="../assets/order/address-icon-1.png" width="24" height="24">
-            <input type="text" placeholder="请输入车次">
+            <input v-model="train" type="text" placeholder="请输入车次">
           </mt-cell>
-            <mt-cell title="接机／送机" is-link>
+            <mt-cell :title="fetchSendData.title" is-link @click.native="fetchSendData.visible=!fetchSendData.visible">
               <img slot="icon" src="../assets/order/address-icon-1.png" width="24" height="24">
             </mt-cell>
-            <mt-cell title="单程／往返" is-link>
+            <mt-cell :title="singleData.title" is-link @click.native="singleData.visible=!singleData.visible">
               <img slot="icon" src="../assets/order/address-icon-1.png" width="24" height="24">
             </mt-cell>
 
@@ -82,34 +82,81 @@
           <mt-cell :title="vehicleData.title" is-link @click.native="vehicleData.pickerVisible=!vehicleData.pickerVisible">
             <img slot="icon" src="../assets/order/car-icon.png" width="24" height="24">
           </mt-cell>
-          <mt-cell title="请选择租期" is-link>
+          <mt-cell :title="rzTenancyData.title" is-link @click.native="rzTenancyData.visible=!rzTenancyData.visible">
             <img slot="icon" src="../assets/order/day-icon.png" width="24" height="24">
           </mt-cell>
         </mt-tab-container-item>
         <mt-tab-container-item id="5">
           <mt-cell class="cell-input">
             <img slot="icon" src="../assets/order/time-icon.png" width="24" height="24">
-            <input type="text" placeholder="请输入车型">
+            <input v-model="customerCarType" type="text" placeholder="请输入车型">
           </mt-cell>
           <mt-cell class="cell-input">
             <img slot="icon" src="../assets/order/car-icon.png" width="24" height="24">
-            <input type="text" placeholder="请输入其他需求">
+            <input v-model="remark" type="text" placeholder="请输入其他需求">
           </mt-cell>
-          <mt-cell title="请选择租期" is-link>
+          <mt-cell :title="qyTenancyData.title" is-link @click.native="qyTenancyData.visible=!qyTenancyData.visible">
             <img slot="icon" src="../assets/order/day-icon.png" width="24" height="24">
           </mt-cell>
         </mt-tab-container-item>
       </mt-tab-container>
     </div>
 
-    <mt-button size="large" type="primary">提交</mt-button>
+    <mt-button v-on:click="createOrder" size="large" type="primary">提交</mt-button>
 
-    <mt-popup v-model="zqModelPickerVisible" position="bottom" class="mint-datetime model-picker">
+
+    <mt-popup v-model="rzTenancyData.visible" position="bottom" class="mint-datetime model-picker">
       <mt-picker
-        ref="modelPicker"
-        :slots="zqModelPickerSlot"
+        ref="rzTenancyModelPicker"
+        :slots="rzTenancyData.modelPickerSlot"
         :visible-item-count="3"
-        showToolbar>
+        showToolbar
+        @change="onRzTenancyChange">
+        <span class="toolbar-title">请选择租期</span>
+      </mt-picker>
+    </mt-popup>
+
+    <mt-popup v-model="qyTenancyData.visible" position="bottom" class="mint-datetime model-picker">
+      <mt-picker
+        ref="qyTenancyModelPicker"
+        :slots="qyTenancyData.modelPickerSlot"
+        :visible-item-count="3"
+        showToolbar
+        @change="onQyTenancyChange">
+        <span class="toolbar-title">请选择租期</span>
+      </mt-picker>
+    </mt-popup>
+
+    <mt-popup v-model="singleData.visible" position="bottom" class="mint-datetime model-picker">
+      <mt-picker
+        ref="singleModelPicker"
+        :slots="singleData.modelPickerSlot"
+        :visible-item-count="3"
+        showToolbar
+        @change="onSingleChange">
+        <span class="toolbar-title">单程／往返</span>
+      </mt-picker>
+    </mt-popup>
+
+    <mt-popup v-model="fetchSendData.visible" position="bottom" class="mint-datetime model-picker">
+      <mt-picker
+        ref="fetchSendModelPicker"
+        :slots="fetchSendData.modelPickerSlot"
+        :visible-item-count="3"
+        showToolbar
+        @change="onFetchSendChange">
+        <span class="toolbar-title">接机／送机</span>
+      </mt-picker>
+    </mt-popup>
+
+
+    <mt-popup v-model="tenancyData.zqModelPickerVisible" position="bottom" class="mint-datetime model-picker">
+      <mt-picker
+        ref="zqModelPicker"
+        :slots="tenancyData.zqModelPickerSlot"
+        :visible-item-count="3"
+        showToolbar
+        @change="onTenancyChange">
         <span class="toolbar-title">请选择包车天数</span>
       </mt-picker>
     </mt-popup>
@@ -232,13 +279,62 @@ export default {
         values: ['公务型','商务型','豪华型'],
         className: 'slot1'
       }],
-      zqModelPickerVisible:false,
-      zqModelPickerSlot: [{
-        flex: 1,
-        values: ['单次','半天','全天'],
-        className: 'slot1'
-      }],
 
+      flight:'',
+      train:'',
+      remark:'',
+      customerCarType:'',
+
+      singleData:{
+        visible:false,
+        modelPickerSlot: [{
+          flex: 1,
+          values: ['单程','往返'],
+          className: 'slot1'
+        }],
+        title:'单程／往返',
+        value:''
+      },
+      fetchSendData:{
+        visible:false,
+        modelPickerSlot: [{
+          flex: 1,
+          values: ['接机','送机'],
+          className: 'slot1'
+        }],
+        title:'接机／送机',
+        value:''
+      },
+      rzTenancyData:{
+        visible:false,
+        modelPickerSlot: [{
+          flex: 1,
+          values: ['短租(1-3个月)','长租(4-12个月)'],
+          className: 'slot1'
+        }],
+        title:'请选择租期',
+        value:''
+      },
+      qyTenancyData:{
+        visible:false,
+        modelPickerSlot: [{
+          flex: 1,
+          values: ['3年','4年','5年','6年','7年','8年','9年','10年'],
+          className: 'slot1'
+        }],
+        title:'请选择租期',
+        value:''
+      },
+      tenancyData:{
+        zqModelPickerVisible:false,
+        zqModelPickerSlot: [{
+          flex: 1,
+          values: ['单次','半天','全天'],
+          className: 'slot1'
+        }],
+        title:'请选择包车天数',
+        value:''
+      },
       startTimeData:{
         pickerVisible:false,
         pickerSlot:[{
@@ -268,7 +364,7 @@ export default {
         pickerVisible:false,
         pickerSlot:[{
           flex: 1,
-          values: ['公务型','商务型','豪华型'],
+          values: ['公务型','商务型','豪华型','其他'],
           className: 'slot1'
         }]
       },
@@ -337,6 +433,102 @@ export default {
       picker.setSlotValue(1, values[1]);
       picker.setSlotValue(2, values[2]);
       this.startTimeData.title = this.startTimeData.value = (values[0] + ' ' + values[1] + ':' + values[2])
+    },
+    onTenancyChange(picker,values){
+      this.tenancyData.title = values[0];
+      this.tenancyData.value = values[0];
+      if (values[0] > values[1]) {
+        picker.setSlotValue(1, values[0]);
+      }
+    },
+    onRzTenancyChange(picker,values){
+      this.rzTenancyData.title = values[0];
+      this.rzTenancyData.value = values[0];
+      if (values[0] > values[1]) {
+        picker.setSlotValue(1, values[0]);
+      }
+    },
+    onQyTenancyChange(picker,values){
+      this.qyTenancyData.title = values[0];
+      this.qyTenancyData.value = values[0];
+      if (values[0] > values[1]) {
+        picker.setSlotValue(1, values[0]);
+      }
+    },
+    onFetchSendChange(picker,values){
+      this.fetchSendData.title = values[0];
+      if(values[0] == '接机'){
+        this.fetchSendData.value = 0;
+      }else{
+        this.fetchSendData.value = 1;
+      }
+      if (values[0] > values[1]) {
+        picker.setSlotValue(1, values[0]);
+      }
+    },
+    onSingleChange(picker,values){
+      this.singleData.title = values[0];
+      if(values[0] == '单程'){
+        this.singleData.value = 0;
+      }else{
+        this.singleData.value = 1;
+      }
+      if (values[0] > values[1]) {
+        picker.setSlotValue(1, values[0]);
+      }
+    },
+    createOrder(){
+      var $this = this;
+      console.info($this.selected)
+      if(document.cookie.indexOf('loginName') == -1){
+        $this.$router.push({path:'/login'});
+        return;
+      }
+      var orderInfo = {};
+      orderInfo.type = $this.selected;
+      if(orderInfo.type == 1){
+        orderInfo.startTime = $this.startTimeData.value;
+        orderInfo.startAddress = $this.addressData.startAddress;
+        orderInfo.endAddress = $this.addressData.endAddress;
+        orderInfo.customerCarType = $this.vehicleData.value;
+        orderInfo.tenancy = $this.tenancyData.value;
+      }else if(orderInfo.type == 2){
+        orderInfo.startTime = $this.startTimeData.value;
+        orderInfo.startAddress = $this.addressData.startAddress;
+        orderInfo.endAddress = $this.addressData.endAddress;
+        orderInfo.customerCarType = $this.vehicleData.value;
+        orderInfo.flightTrain = $this.flight;
+        orderInfo.fetchSend = $this.fetchSendData.value;
+        orderInfo.single = $this.singleData.value;
+      }else if(orderInfo.type == 3){
+        orderInfo.startTime = $this.startTimeData.value;
+        orderInfo.startAddress = $this.addressData.startAddress;
+        orderInfo.endAddress = $this.addressData.endAddress;
+        orderInfo.customerCarType = $this.vehicleData.value;
+        orderInfo.flightTrain = $this.train;
+        orderInfo.fetchSend = $this.fetchSendData.value;
+        orderInfo.single = $this.singleData.value;
+      }else if(orderInfo.type == 4){
+        orderInfo.startTime = $this.startTimeData.value;
+        orderInfo.customerCarType = $this.vehicleData.value;
+        orderInfo.tenancy = $this.rzTenancyData.value;
+      }else if(orderInfo.type == 5){
+        orderInfo.remark = $this.remark;
+        orderInfo.customerCarType = $this.customerCarType;
+        orderInfo.tenancy = $this.qyTenancyData.value;
+      }
+      console.info(orderInfo);
+      $this.$http.post('/api/rent/addOrder.do',orderInfo
+      ).then((response) => {
+        var data = response.body;
+        if(data && data.re){
+          console.info(data);
+        }else{
+          $this.myToast(data.msg);
+        }
+      }).catch(function(response) {
+        console.log(response)
+      })
     }
   },
 created(){
