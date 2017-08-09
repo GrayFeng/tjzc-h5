@@ -37,6 +37,20 @@ Vue.prototype.myToast = function(msg){
   })
 };
 
+Vue.prototype.getNowDateTime = function(){
+  var now = new Date();
+  var year = now.getYear() + 1900;
+  var munth = now.getMonth() + 1;
+  var date = now.getDate();
+  var hour = now.getHours();
+  var mintue = now.getMinutes();
+  munth = munth < 10 ? '0' + munth : munth;
+  date = date < 10 ? '0' + date : date;
+  hour = hour < 10 ? '0' + hour : hour;
+  mintue = mintue < 10 ? '0' + mintue : mintue;
+  return year + '-' + munth + '-' + date + ' ' + hour + ':' + mintue;
+}
+
 Vue.prototype.myValidata = {
   isMobile: function (val) {
     var myreg = /^((13[0-9])|(14[0-9])|(15[^4,\D])|(16[0-9])|(17[0-9])|(18[0,1-9]))\d{8}$/;

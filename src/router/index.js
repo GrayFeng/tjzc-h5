@@ -7,6 +7,8 @@ import login from '@/pages/login'
 import reg from '@/pages/reg'
 import my from '@/pages/my'
 import orderList from '@/pages/orderList'
+import memberInfo from '@/pages/memberInfo'
+import modifyPwd from '@/pages/modifyPwd'
 
 Vue.use(Router)
 
@@ -52,6 +54,22 @@ export default new Router({
         requireAuth: true,
       },
       component: orderList
+    },
+    {
+      path: '/memberInfo',
+      name: 'memberInfo',
+      meta: {
+        requireAuth: true,
+      },
+      component: memberInfo
+    },
+    {
+      path: '/modifyPwd',
+      name: 'modifyPwd',
+      meta: {
+        requireAuth: true,
+      },
+      component: modifyPwd
     }
   ]
 })

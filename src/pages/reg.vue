@@ -19,7 +19,7 @@
         <mt-field v-model="companyEmail" label="账号" placeholder="请输入电子邮箱" type="tel"></mt-field>
         <mt-field v-model="companyPassword" label="密码" placeholder="请输入密码" type="password"></mt-field>
         <mt-field v-model="companyPassword1" label="确认密码" placeholder="请输入确认密码" type="password"></mt-field>
-        <mt-field v-model="companyName" label="姓名" placeholder="请输入姓名" type="text"></mt-field>
+        <mt-field v-model="companyName" label="企业名称" placeholder="请输入企业名称" type="text"></mt-field>
         <mt-field v-model="taxId" label="税号" placeholder="请输入税号" type="text"></mt-field>
         <mt-field v-model="contact" label="联系人" placeholder="请输入联系人" type="text"></mt-field>
         <mt-field v-model="contactMobile" label="联系人手机号" placeholder="请输入联系人手机号" type="tel"></mt-field>
@@ -106,18 +106,30 @@ export default {
         return;
       }
 
-      if(regInfo.idNumber
-        && !_this.myValidata.checkIDCard(regInfo.idNumber)){
-        _this.myToast('身份证号格式不正确');
-        return;
-      }
 
-      if(regInfo.contactMobile
-        && !_this.myValidata.isMobile(regInfo.contactMobile)){
-        _this.myToast('联系人手机号格式不正确');
-        return;
+      if(_this.selected == '1'){
+        if(!regInfo.displayName){
+          _this.myToast('请输入姓名');
+          return;
+        }
+        if(!regInfo.idNumber){
+          _this.myToast('请输入身份证号');
+          return;
+        }else if(!_this.myValidata.checkIDCard(regInfo.idNumber)){
+          _this.myToast('身份证号格式不正确');
+          return;
+        }
+      }else{
+        if(!regInfo.displayName){
+          _this.myToast('请输入企业名称');
+          return;
+        }
+        if(regInfo.contactMobile
+          && !_this.myValidata.isMobile(regInfo.contactMobile)){
+          _this.myToast('联系人手机号格式不正确');
+          return;
+        }
       }
-
 
       if(!regInfo.validateCode){
         _this.myToast('请输入验证码');

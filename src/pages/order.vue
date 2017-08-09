@@ -492,6 +492,14 @@ export default {
         orderInfo.endAddress = $this.addressData.endAddress;
         orderInfo.customerCarType = $this.vehicleData.value;
         orderInfo.tenancy = $this.tenancyData.value;
+        if(orderInfo.startTime < $this.getNowDateTime()){
+          $this.myToast("请选择有效时间");
+          return;
+        }
+        if(!orderInfo.startAddress || !orderInfo.endAddress){
+          $this.myToast("请输入用车地址");
+          return;
+        }
       }else if(orderInfo.type == 2){
         orderInfo.startTime = $this.startTimeData.value;
         orderInfo.startAddress = $this.addressData.startAddress;
@@ -500,6 +508,14 @@ export default {
         orderInfo.flightTrain = $this.flight;
         orderInfo.fetchSend = $this.fetchSendData.value;
         orderInfo.single = $this.singleData.value;
+        if(orderInfo.startTime < $this.getNowDateTime()){
+          $this.myToast("请选择有效时间");
+          return;
+        }
+        if(!orderInfo.startAddress || !orderInfo.endAddress){
+          $this.myToast("请输入用车地址");
+          return;
+        }
       }else if(orderInfo.type == 3){
         orderInfo.startTime = $this.startTimeData.value;
         orderInfo.startAddress = $this.addressData.startAddress;
@@ -508,21 +524,36 @@ export default {
         orderInfo.flightTrain = $this.train;
         orderInfo.fetchSend = $this.fetchSendData.value;
         orderInfo.single = $this.singleData.value;
+        if(orderInfo.startTime < $this.getNowDateTime()){
+          $this.myToast("请选择有效时间");
+          return;
+        }
+        if(!orderInfo.startAddress || !orderInfo.endAddress){
+          $this.myToast("请输入用车地址");
+          return;
+        }
       }else if(orderInfo.type == 4){
         orderInfo.startTime = $this.startTimeData.value;
         orderInfo.customerCarType = $this.vehicleData.value;
         orderInfo.tenancy = $this.rzTenancyData.value;
+        if(orderInfo.startTime < $this.getNowDateTime()){
+          $this.myToast("请选择有效时间");
+          return;
+        }
       }else if(orderInfo.type == 5){
         orderInfo.remark = $this.remark;
         orderInfo.customerCarType = $this.customerCarType;
         orderInfo.tenancy = $this.qyTenancyData.value;
+        if(!orderInfo.customerCarType){
+          $this.myToast("请输入车型");
+        }
       }
       console.info(orderInfo);
       $this.$http.post('/api/rent/addOrder.do',orderInfo
       ).then((response) => {
         var data = response.body;
         if(data && data.re){
-          console.info(data);
+          $this.$messagebox.alert('订单创建成功!', '提示');
         }else{
           $this.myToast(data.msg);
         }
