@@ -3,6 +3,11 @@ import Router from 'vue-router'
 import index from '@/pages/index'
 import order from '@/pages/order'
 import tours from '@/pages/tours'
+import visa from '@/pages/visa'
+import rv from '@/pages/rv'
+import vehicle from '@/pages/vehicle'
+import activity from '@/pages/activity'
+import aboutus from '@/pages/aboutus'
 import login from '@/pages/login'
 import reg from '@/pages/reg'
 import my from '@/pages/my'
@@ -28,6 +33,31 @@ export default new Router({
       path: '/tours',
       name: 'tours',
       component: tours
+    },
+    {
+      path: '/visa',
+      name: 'visa',
+      component: visa
+    },
+    {
+      path: '/rv',
+      name: 'rv',
+      component: rv
+    },
+    {
+      path: '/activity',
+      name: 'activity',
+      component: activity
+    },
+    {
+      path: '/vehicle',
+      name: 'vehicle',
+      component: vehicle
+    },
+    {
+      path: '/aboutus',
+      name: 'aboutus',
+      component: aboutus
     },
     {
       path: '/login',

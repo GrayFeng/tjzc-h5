@@ -1,9 +1,9 @@
 <template>
   <div class="page-toursr">
     <mt-navbar class="page-part" v-model="selected">
-      <mt-tab-item id="1">境内游</mt-tab-item>
-      <mt-tab-item id="2">出境游</mt-tab-item>
-      <mt-tab-item id="3">私人定制</mt-tab-item>
+      <mt-tab-item id="1">国内旅游</mt-tab-item>
+      <mt-tab-item id="2">出境旅游</mt-tab-item>
+      <mt-tab-item id="3">商务旅游</mt-tab-item>
     </mt-navbar>
 
 
@@ -12,17 +12,31 @@
         <ul class="tours-box">
           <li class="tours-item" v-for="item in domesticItems">
             <a href="#">
-              <img :src="item.img"/>
+              <img src="../assets/tours/domestic-01.jpg"/>
             </a>
-            <p>{{item.title}}</p>
+            <p>【三亚一地】5日【全程海景房/经典景点全含】</p>
           </li>
         </ul>
       </mt-tab-container-item>
       <mt-tab-container-item id="2">
-        <mt-cell v-for="n in 4" :title="'测试 ' + n" />
+        <ul class="tours-box">
+          <li class="tours-item" v-for="item in abroadItems">
+            <a href="#">
+              <img src="../assets/tours/abroad-01.jpg"/>
+            </a>
+            <p>{{item.remark}}</p>
+          </li>
+        </ul>
       </mt-tab-container-item>
       <mt-tab-container-item id="3">
-        <mt-cell v-for="n in 6" :title="'选项 ' + n" />
+        <ul class="tours-box">
+          <li class="tours-item" v-for="item in businessItems">
+            <a href="#">
+              <img src="../assets/tours/abroad-01.jpg"/>
+            </a>
+            <p>{{item.remark}}</p>
+          </li>
+        </ul>
       </mt-tab-container-item>
     </mt-tab-container>
   </div>
@@ -94,8 +108,46 @@
           {
             img:require('../assets/tours/domestic-08.jpg'),
             title:'云南昆明/西双版纳升级版6日游'
-          }]
+          }],
+        abroadItems:[],
+        businessItems:[]
+      }
+    },
+  watch:{
+    selected:{
+      handler(curVal,oldVal){
+        if(curVal != oldVal){
+          this.getPicList();
+        }
       }
     }
+  },
+  methods:{
+    getPicList(){
+      var $this = this;
+      $this.$http.post('/api/tours/getPicList.do',{
+        type:$this.selected
+      }).then((response) => {
+        var data = response.body;
+        if(data && data.re){
+          if($this.selected == 1){
+            $this.domesticItems = data.re;
+          }else if($this.selected == 2){
+            $this.abroadItems = data.re;
+          }else{
+            $this.businessItems = data.re;
+          }
+          console.log(data.re)
+        }else{
+          $this.myToast(data.msg);
+        }
+      }).catch(function(response) {
+        console.log(response)
+      })
+    }
+  },
+  mounted(){
+    this.getPicList();
+  }
   }
 </script>

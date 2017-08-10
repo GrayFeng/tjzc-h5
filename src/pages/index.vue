@@ -19,28 +19,36 @@
               <p>完美旅途</p>
             </li>
           </router-link>
-          <router-link to="/tours">
+          <router-link to="/visa">
             <li class="nav-li1 bg-yellow border-left-ccc">
               <i class="icon-qz"></i>
               <p>签动世界</p>
             </li>
           </router-link>
-          <li class="nav-li2 bg-blue">
-            <i class="icon-hd"></i>
-            <p>精彩活动</p>
-          </li>
-          <li class="nav-li1 bg-blue border-left-ccc">
-            <i class="icon-fc"></i>
-            <p>有房有车</p>
-          </li>
-          <li class="nav-li2 bg-yellow">
-            <i class="icon-cx"></i>
-            <p>热门车型</p>
-          </li>
-          <li class="nav-li1 bg-green border-left-ccc">
-            <i class="icon-us"></i>
-            <p>关于我们</p>
-          </li>
+          <router-link to="/activity">
+            <li class="nav-li2 bg-blue">
+              <i class="icon-hd"></i>
+              <p>精彩活动</p>
+            </li>
+          </router-link>
+          <router-link to="/rv">
+            <li class="nav-li1 bg-blue border-left-ccc">
+              <i class="icon-fc"></i>
+              <p>有房有车</p>
+            </li>
+          </router-link>
+          <router-link to="/vehicle">
+            <li class="nav-li2 bg-yellow">
+              <i class="icon-cx"></i>
+              <p>热门车型</p>
+            </li>
+          </router-link>
+          <router-link to="/aboutus">
+            <li class="nav-li1 bg-green border-left-ccc">
+              <i class="icon-us"></i>
+              <p>关于我们</p>
+            </li>
+          </router-link>
         </ul>
     </nav>
   </div>
