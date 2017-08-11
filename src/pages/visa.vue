@@ -11,9 +11,9 @@
         <ul class="tours-box">
           <li class="tours-item" v-for="item in hotCountry">
             <a href="#">
-              <img src="../assets/tours/domestic-01.jpg"/>
+              <img :src="item.url"/>
             </a>
-            <p>{{item.remark}}</p>
+            <p>{{item.name}}</p>
           </li>
         </ul>
       </mt-tab-container-item>
@@ -61,6 +61,7 @@
   }
   .page-visa .tours-item img{
     width: 100%;
+    height: 130px;
   }
   .page-visa .tours-item p{
     font-size: 15px;

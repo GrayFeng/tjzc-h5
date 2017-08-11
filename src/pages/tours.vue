@@ -12,9 +12,9 @@
         <ul class="tours-box">
           <li class="tours-item" v-for="item in domesticItems">
             <a href="#">
-              <img src="../assets/tours/domestic-01.jpg"/>
+              <img :src="item.url"/>
             </a>
-            <p>【三亚一地】5日【全程海景房/经典景点全含】</p>
+            <p>{{item.name}}</p>
           </li>
         </ul>
       </mt-tab-container-item>
@@ -22,9 +22,9 @@
         <ul class="tours-box">
           <li class="tours-item" v-for="item in abroadItems">
             <a href="#">
-              <img src="../assets/tours/abroad-01.jpg"/>
+              <img :src="item.url"/>
             </a>
-            <p>{{item.remark}}</p>
+            <p>{{item.name}}</p>
           </li>
         </ul>
       </mt-tab-container-item>
@@ -32,9 +32,9 @@
         <ul class="tours-box">
           <li class="tours-item" v-for="item in businessItems">
             <a href="#">
-              <img src="../assets/tours/abroad-01.jpg"/>
+              <img :src="item.url"/>
             </a>
-            <p>{{item.remark}}</p>
+            <p>{{item.name}}</p>
           </li>
         </ul>
       </mt-tab-container-item>
@@ -65,6 +65,7 @@
   }
   .page-toursr .tours-item img{
     width: 100%;
+    height: 120px;
   }
   .page-toursr .tours-item p{
     font-size: 15px;
@@ -77,38 +78,7 @@
     data () {
       return {
         selected: '1',
-        domesticItems:[{
-          img:require('../assets/tours/domestic-01.jpg'),
-          title:'【三亚一地】5日【全程海景房/经典景点全含】'
-        },
-          {
-            img:require('../assets/tours/domestic-02.jpg'),
-            title:'丽江泸沽湖5日游【玉龙雪山/泸沽湖环湖游/漫品泸沽湖】'
-          },
-          {
-            img:require('../assets/tours/domestic-03.jpg'),
-            title:'长白山西北坡镜泊湖软卧6日游'
-          },
-          {
-            img:require('../assets/tours/domestic-04.jpg'),
-            title:'武夷山厦门鼓浪屿土楼卧高飞6日'
-          },
-          {
-            img:require('../assets/tours/domestic-05.jpg'),
-            title:'南宁/德天跨国瀑布/通灵峡谷/桂林大漓江'
-          },
-          {
-            img:require('../assets/tours/domestic-06.jpg'),
-            title:'华东五市/宿西塘双高5日游【江南船奇/水乡乌镇】'
-          },
-          {
-            img:require('../assets/tours/domestic-07.jpg'),
-            title:'三亚一地双飞5日游【海景时光/海岛雨林/呀诺达观光车】'
-          },
-          {
-            img:require('../assets/tours/domestic-08.jpg'),
-            title:'云南昆明/西双版纳升级版6日游'
-          }],
+        domesticItems:[],
         abroadItems:[],
         businessItems:[]
       }
