@@ -160,7 +160,7 @@
     }
 
     .page-index .nav-li1 .icon-fc{
-      background: url(../assets/index/nav-fc06.png) no-repeat;
+      background: url(../assets/index/nav-rv.png) no-repeat;
       background-size: 36px 36px;
     }
 

@@ -1,27 +1,78 @@
 <template>
   <div class="page-aboutus">
-    <h4>企业介绍</h4>
-    <p>
-      第一条　为加强汽车租赁业管理，保护汽车租赁业经营人（以下简称租赁经营人）和使用租赁汽车的承租人（以下简称承租人）的合法权益，促进汽车租赁业的健康发展，根据国家的有关法律法规，制定本规定。
-      第二条　汽车租赁是指在约定时间内租赁经营人将租赁汽车交付承租人使用，收取租赁费用，不提供驾驶劳务的经营方式。
-      第三条　本规定适用于除公共汽车、出租汽车客运以外的各类客车、货车、特种汽车和其它机动车辆的租赁经营活动。
-      第四条　汽车租赁业的发展实行统筹规划，多家经营，统一管理的原则。
-      第五条　各级交通主管部门负责本辖区汽车租赁业的管理。交通主管部门所属的道路运政管理机构具体履行汽车租赁业的管理职责。国务院价格主管部门会同交通主管部门制定汽车租赁业收费项目。各省级价格主管部门负责规定本辖区汽车租赁业收费标准，报国务院价格主管部门备案。
-    </p>
-    <h4>联系我们</h4>
-    <p>
-      地址:天津xxxxxxxxxxxxxxxxxx<br>
-      电话:400000000000
-    </p>
+    <div class="item">
+        <div class="item-icon">
+            <i></i>
+        </div>
+        <div class="item-content">
+          服务热线:<br>
+          400-0000-0000
+        </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">
+        <i></i>
+      </div>
+      <div class="item-content">
+        服务热线:<br>
+        400-0000-0000
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">
+        <i></i>
+      </div>
+      <div class="item-content">
+        服务热线:<br>
+        400-0000-0000
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">
+        <i></i>
+      </div>
+      <div class="item-content">
+        服务热线:<br>
+        400-0000-0000
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">
+        <i></i>
+      </div>
+      <div class="item-content">
+        服务热线:<br>
+        400-0000-0000
+      </div>
+    </div>
   </div>
 </template>
 <style>
 .page-aboutus{
   padding: 10px;
 }
-.page-aboutus h4{
-  font-size: 20px;
+.page-aboutus .item{
+  font-size: 18px;
+  margin: 10px;
 }
+.page-aboutus .item-icon{
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+}
+.page-aboutus .item-content{
+  display: inline-block;
+  width: 75%;
+  margin-top: 10px;
+  float: right;
+}
+  .page-aboutus .item-icon i{
+    background: url(../assets/aboutus/icon-kf.png) no-repeat;
+    background-size: 64px 64px;
+    display: block;
+    height: 64px;
+    width: 64px;
+  }
 </style>
 <script type="text/babel">
   export default {
