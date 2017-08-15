@@ -10,6 +10,7 @@ import activity from '@/pages/activity'
 import aboutus from '@/pages/aboutus'
 import login from '@/pages/login'
 import reg from '@/pages/reg'
+import memberRule from '@/pages/memberRule'
 import my from '@/pages/my'
 import orderList from '@/pages/orderList'
 import memberInfo from '@/pages/memberInfo'
@@ -68,6 +69,11 @@ export default new Router({
       path: '/reg',
       name: 'reg',
       component: reg
+    },
+    {
+      path: '/memberRule',
+      name: 'memberRule',
+      component: memberRule
     },
     {
       path: '/my',

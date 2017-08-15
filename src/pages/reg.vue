@@ -28,6 +28,10 @@
         </mt-field>
       </mt-tab-container-item>
     </mt-tab-container>
+    <div class="memberRule-box">
+      <input type="checkbox" id="memberRule" v-model="memberRule">
+      <a href="#/memberRule">《大行道会员注册协议》</a>
+    </div>
     <mt-button v-on:click="reg" class="login-btn" size="large" type="primary">注册</mt-button>
   </div>
 </template>
@@ -39,6 +43,9 @@
   }
   .page-reg .mint-tab-item-label{
     font-size: 18px;
+  }
+  .page-reg .memberRule-box{
+    margin: 10px 0 0 10px;
   }
 </style>
 <script type="text/babel">
@@ -62,7 +69,8 @@ export default {
       companyName:'',
       taxId:'',
       contact:'',
-      contactMobile:''
+      contactMobile:'',
+      memberRule:false
     };
   },
   methods: {
@@ -89,7 +97,6 @@ export default {
       }
       regInfo.validateCode = _this.vCode;
 
-      console.info(_this.vCode)
       if(!_this.myValidata.isMobile(regInfo.loginName)
         && !_this.myValidata.isEmail(regInfo.loginName)){
         _this.myToast('用户名格式不正确');
@@ -133,6 +140,11 @@ export default {
 
       if(!regInfo.validateCode){
         _this.myToast('请输入验证码');
+        return;
+      }
+
+      if(!_this.memberRule){
+        _this.myToast('请勾选会员协议');
         return;
       }
 
