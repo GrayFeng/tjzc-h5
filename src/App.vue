@@ -24,13 +24,19 @@
     margin: 0;
     padding: 0;
   }
+  .mint-header-title{
+    background: url(assets/logo.png) no-repeat;
+    background-size: 180px 45px;
+    width: 180px;
+    height: 45px;
+  }
 </style>
 
 <script type="text/babel">
   export default {
     data() {
       return {
-        title: '大行道'
+        title: ''
       }
     },
     computed: {
