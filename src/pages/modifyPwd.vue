@@ -1,6 +1,6 @@
 <template>
   <div class="page-modifyPwd">
-    <mt-field  v-model="oldPassword" label="愿密码" placeholder="请输入愿密码" type="password"></mt-field>
+    <mt-field  v-model="oldPassword" label="原密码" placeholder="请输入原密码" type="password"></mt-field>
     <mt-field  v-model="newPassword" label="新密码" placeholder="请输入新密码" type="password"></mt-field>
     <mt-field  v-model="newPassword1" label="确认新密码" placeholder="请输入确认密码" type="password"></mt-field>
     <mt-button v-on:click="modifyPwd"  class="login-btn" size="large" type="primary">保存</mt-button>

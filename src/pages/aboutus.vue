@@ -6,7 +6,7 @@
         </div>
         <div class="item-content">
           服务热线:<br>
-          <span class="bgc">400-0000-0000</span>
+          <span class="bgc">022-23556703</span>
         </div>
     </div>
     <div class="item">
@@ -15,7 +15,7 @@
       </div>
       <div class="item-content">
         公司传真:<br>
-        <span class="bgc">400-0000-0000</span>
+        <span class="bgc">022-23347817</span>
       </div>
     </div>
     <div class="item">
@@ -24,7 +24,7 @@
       </div>
       <div class="item-content">
         公司地址:<br>
-        <span style="font-size: 16px">天津大行道出租车信息咨询服务有限公司</span>
+        <span class="bgc" style="font-size: 16px">天津市南开区复康路八里台中天大厦A座13层</span>
       </div>
     </div>
     <div class="item">
@@ -33,7 +33,7 @@
       </div>
       <div class="item-content">
         媒体联系:<br>
-        邮箱:<span class="bgc">ab@126.com</span>
+        <span class="bgc">daxingdaodingche@163.com</span>
       </div>
     </div>
     <div class="item">
@@ -42,7 +42,7 @@
       </div>
       <div class="item-content">
         在线客服:<br>
-        400-0000-0000
+        <span class="bgc">QQ2963007610</span>
       </div>
     </div>
     <div class="item">
@@ -51,7 +51,7 @@
       </div>
       <div class="item-content">
         渠道合作:<br>
-        <span class="bgc">400-0000-0000</span>
+        <span class="bgc">022-23556705</span>
       </div>
     </div>
   </div>
