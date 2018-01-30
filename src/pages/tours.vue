@@ -3,7 +3,6 @@
     <mt-navbar class="page-part" v-model="selected">
       <mt-tab-item id="1">国内旅游</mt-tab-item>
       <mt-tab-item id="2">出境旅游</mt-tab-item>
-      <mt-tab-item id="3">商务旅游</mt-tab-item>
     </mt-navbar>
 
 
@@ -21,16 +20,6 @@
       <mt-tab-container-item id="2">
         <ul class="tours-box">
           <li class="tours-item" v-for="item in abroadItems">
-            <a href="#">
-              <img :src="item.url"/>
-            </a>
-            <p>{{item.name}}</p>
-          </li>
-        </ul>
-      </mt-tab-container-item>
-      <mt-tab-container-item id="3">
-        <ul class="tours-box">
-          <li class="tours-item" v-for="item in businessItems">
             <a href="#">
               <img :src="item.url"/>
             </a>

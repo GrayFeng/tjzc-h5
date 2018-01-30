@@ -60,8 +60,8 @@
           {url:require('../assets/vehicle/06.jpg'),name:'奥迪A6'},
           {url:require('../assets/vehicle/07.jpg'),name:'雪佛兰景程'},
           {url:require('../assets/vehicle/08.jpg'),name:'大众帕萨特'},
-          {url:require('../assets/vehicle/08.jpg'),name:'大众帕萨特'},
-          {url:require('../assets/vehicle/01.jpg'),name:'宝马5系'}
+          {url:require('../assets/vehicle/kmr.jpg'),name:'凯美瑞'},
+          {url:require('../assets/vehicle/kst.jpg'),name:'考斯特'}
         ]
       }
     },

@@ -276,7 +276,7 @@ export default {
       modelPickerVisible:false,
       modelPickerSlot: [{
         flex: 1,
-        values: ['公务型','商务型','豪华型'],
+        values: ['舒适型','商务型','豪华型'],
         className: 'slot1'
       }],
 
@@ -364,7 +364,7 @@ export default {
         pickerVisible:false,
         pickerSlot:[{
           flex: 1,
-          values: ['公务型','商务型','豪华型','其他'],
+          values: ['舒适型','商务型','豪华型','其他'],
           className: 'slot1'
         }]
       },
